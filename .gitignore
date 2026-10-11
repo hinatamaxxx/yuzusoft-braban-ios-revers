@@ -1,0 +1,23 @@
+# Whitelist: only our own code and docs. Game data, keys, decrypted / converted assets,
+# the ISO, IPA builds and third-party tools must never be committed.
+/*
+!/.gitignore
+!/README.md
+!/docs/
+!/tools/
+!/game/
+!/ios/
+
+# generated from the game (copyrighted content)
+/game/data/
+/game/i/
+/game/s/
+/game/v/
+# app icon is made from the game's artwork
+/ios/Braban/Assets.xcassets/AppIcon.appiconset/*.png
+# build caches
+/ios/.build/
+/ios/xtool/
+# unused prototype
+/tools/serve.py
+__pycache__/
