@@ -160,11 +160,15 @@ node tools\serve.js 8765        # http://localhost:8765/ で動作確認
 
 ### ビルド（Mac なし、Windows + WSL）
 
-WSL の Arch Linux に Swift 6.4 / xtool / Apple SDK（Xcode 27 から生成）を用意した環境で、`wsl-swift-ipa` スキルの `build_ipa.py` を使う。
+WSL の Arch Linux に Swift 6.4 / xtool / Apple SDK（Xcode 27 から生成）を用意した環境で、`build_ipa.py` を使う。
+
+- 環境の作り方とビルド手順：**[hinatamaxxx/windows-ipa-build-guide](https://github.com/hinatamaxxx/windows-ipa-build-guide)**（検証済みの版・初期構築・日常のビルド・つまずいた点。`scripts/build_ipa.py` もここ）
+- 土台にしたもの：[joshuaswarren/omarchy-apple-dev](https://github.com/joshuaswarren/omarchy-apple-dev)（Linux で iOS アプリを作る一式）、[xtool](https://github.com/xtool-org/xtool)（SwiftPM から .app を作るツール）
+- Apple SDK は、本人が [Apple 公式](https://developer.apple.com/download/all/?q=Xcode) から入手した Xcode の .xip から生成する。
 
 ```bash
 bash tools/sync_ios.sh --full      # ios/ と game/ を ~/braban-ios へ（2回目からは --full なしでコードだけ）
-python3 <skill>/scripts/build_ipa.py --project ~/braban-ios --output-dir ~/braban-ipa --bundle-id local.braban.player
+python3 <windows-ipa-build-guide>/scripts/build_ipa.py --project ~/braban-ios --output-dir ~/braban-ipa --bundle-id local.braban.player
 python3 tools/dedup_package.py ~/braban-ios ~/braban-ipa/<run>/Braban-unsigned-dedup.ipa
 ```
 

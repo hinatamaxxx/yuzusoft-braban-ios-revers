@@ -56,7 +56,9 @@ docs/    手順書・スクリーンショット
 - Windows 11、7-Zip、Python 3.12、Node.js、ffmpeg
 - Frida（`pip install frida-tools`）、pycryptodome、siphash、Pillow
 - 外部スクリプト：[YuriSizuku/GalgameReverse](https://github.com/YuriSizuku/GalgameReverse) の `project/krkr/src/`（`ext/GalgameReverse` に clone して使う）
-- iOS ビルド：WSL2 Arch Linux + Swift 6.4 + xtool + Apple SDK（Mac 不要）
+- iOS ビルド（Mac 不要）：Windows の WSL2 に Arch Linux を入れ、Swift 6.4・xtool・Apple SDK（公式の Xcode から生成）を用意する。
+  構築からビルドまでの手順は [hinatamaxxx/windows-ipa-build-guide](https://github.com/hinatamaxxx/windows-ipa-build-guide) にまとめてある（この移植で使った `build_ipa.py` もここに入っている）。
+  土台は [joshuaswarren/omarchy-apple-dev](https://github.com/joshuaswarren/omarchy-apple-dev) と [xtool](https://github.com/xtool-org/xtool)。
 - iPhone：AltStore 経由の LiveContainer、`pymobiledevice3`
 
 ## 注意
