@@ -6,7 +6,7 @@ iPhone / iPad で遊べる iOS アプリにするまでの**リバースエン�
 - 手順の詳細：[docs/REVERSE_ENGINEERING.md](docs/REVERSE_ENGINEERING.md)
 - ゲームのデータ・復号鍵・変換済み素材・IPA は**含みません**。手元のディスクから作り直します。
 
-## 実機での動作（iPhone 17 Pro / iOS 27、LiveContainer）
+## 実機での動作（iPhone 17 / iOS 27、LiveContainer）
 
 ![iPhoneで遊んでいるところ](docs/screenshots/play_on_iphone.gif)
 
