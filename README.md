@@ -1,10 +1,32 @@
-# braban-ios-port
+# yuzusoft-braban-ios-revers
 
-所有している PC 版「ぶらばん！」（柚子ソフト、吉里吉里Z、2021年再販版）のディスクイメージから、
-iPhone / iPad で遊べる iOS アプリを作るまでの**手順とツール**です。
+ゆずソフト（YUZUSOFT）「ぶらばん！」PC 版（吉里吉里Z、2021年再販版）を、所有しているディスクイメージから
+iPhone / iPad で遊べる iOS アプリにするまでの**リバースエンジニアリング手順とツール**です。
 
 - 手順の詳細：[docs/REVERSE_ENGINEERING.md](docs/REVERSE_ENGINEERING.md)
 - ゲームのデータ・復号鍵・変換済み素材・IPA は**含みません**。手元のディスクから作り直します。
+
+## 実機での動作（iPhone 17 Pro / iOS 27、LiveContainer）
+
+| タイトル | タイトルの︙メニュー（ロード / 設定） |
+|---|---|
+| ![](docs/screenshots/01_title.jpg) | ![](docs/screenshots/02_title_menu.jpg) |
+
+| ゲーム画面（右上︙のみ・初期設定） | ︙メニュー |
+|---|---|
+| ![](docs/screenshots/03_game.jpg) | ![](docs/screenshots/04_corner_menu.jpg) |
+
+| 両サイドにボタン（オリジナルの選択肢バーを流用） | ボタン配置「なし（オリジナル）」 |
+|---|---|
+| ![](docs/screenshots/05_side_buttons.jpg) | ![](docs/screenshots/06_original_layout.jpg) |
+
+| システムメニュー | 設定（文字の大きさ・レイアウトなど） |
+|---|---|
+| ![](docs/screenshots/07_system_menu.jpg) | ![](docs/screenshots/08_settings_1.jpg) |
+
+| 設定（ボタンの配置・アイコン・サイド背景・通知センター時の音） |
+|---|
+| ![](docs/screenshots/09_settings_2.jpg) |
 
 ## 構成
 
@@ -13,7 +35,7 @@ tools/   復号・名前復元・素材変換・検証・ビルド補助のス�
 game/    HTML5 製の KAG / KAGEX 互換エンジン（index.html, js/, css/）
          ※ data/ i/ s/ v/ は build_assets.py が生成（リポジトリには含めない）
 ios/     SwiftUI + WKWebView のアプリ（ネイティブ音声 AVAudioEngine）
-docs/    手順書
+docs/    手順書・スクリーンショット
 ```
 
 ## 流れ（概要）
@@ -39,3 +61,4 @@ docs/    手順書
 
 個人で所有しているゲームを、自分の端末で遊ぶための記録です。
 ゲームのデータ、復号鍵、変換済み素材、それらを含む IPA は配布しないでください。
+スクリーンショットは動作確認の記録として載せています（ゲームの画像の権利はゆずソフトにあります）。
